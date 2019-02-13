@@ -7,8 +7,7 @@ let numberInput = document.querySelector('.numberInputer');
 // Elementos del enlace
 let apiKey = 'qSY42Sd5zvHkzXsVx4141nDB5NDtzkV6';
 let link = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
-// Límite de imagenes
-let limit = 5;
+
 
 form.addEventListener('submit', getText);
 
@@ -16,7 +15,7 @@ form.addEventListener('submit', getText);
 function getText(e){
   e.preventDefault();  
   let search = input.value || 'meme';
-  limit = numberInput.value;
+  let limit = numberInput.value || 5;
   let request = `${link}&q=${search}&limit=${limit}`;
   displayGifs(request);
 }
